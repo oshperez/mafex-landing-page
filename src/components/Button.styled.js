@@ -1,28 +1,32 @@
 import styled, { css } from "styled-components";
 
-const Button = styled.a.attrs((props) => ({
-  variant: props.variant || "defualt",
-}))`
+const Button = styled.a`
   font-size: ${({ theme }) => theme.typography.fontSize400};
   font-weight: ${({ theme }) => theme.typography.fontWeightSemiBold};
-  padding: 0.65rem 1.25rem;
-  cursor: pointer;
+  padding: 0.75rem 1.25rem;
   border-radius: ${({ theme }) => theme.shape.borderRadius};
+  cursor: pointer;
 
-  ${({ variant }) =>
+  ${({ variant, theme }) =>
     variant === "contained" &&
     css`
-      background-color: ${({ theme }) => theme.palette.primary.main};
+      font-size: ${({ theme }) => theme.typography.fontSize300};
+      text-transform: uppercase;
+      color: #fff;
+      background-color: ${theme.palette.primary.main};
+      padding-block: 1rem;
       &:hover {
-        background-color: ${({theme}) => theme.palette.primary.light};
-        transform: scale(1.01)
+        opacity: 0.95;
       }
     `}
 
-  ${({ variant }) =>
+  ${({ variant, theme }) =>
     variant === "outlined" &&
     css`
-      border: 2px solid ${({ theme }) => theme.palette.primary.main};
+      border: thin solid ${theme.palette.primary.main};
+      &:hover {
+        background-color: ${theme.palette.common.lightPink};
+      }
     `}
 
   ${({ pill }) =>
@@ -34,7 +38,7 @@ const Button = styled.a.attrs((props) => ({
 
 export const ButtonWithIcon = styled(Button)`
   display: flex;
-  justify-content: space-between;
+  width: fit-content;
   align-items: center;
   & > *:first-child {
     margin-right: 10px;

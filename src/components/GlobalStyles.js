@@ -15,6 +15,7 @@ const GlobalStyles = createGlobalStyle`
   ul {
     list-style: none;
   }
+  
   a {
     color: ${({ theme }) => theme.palette.text.primary};  
     text-decoration: none;

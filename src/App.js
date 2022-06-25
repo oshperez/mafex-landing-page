@@ -10,8 +10,13 @@ import Header from "components/Header.styled";
 import NavLink from "components/NavLink.styled";
 import FlexContainer from "components/FlexContainer.styled";
 import PhoneNumber from "components/PhoneNumber.styled";
+import HeroSection from "components/HeroSection.styled";
+import Heading from "components/Heading.styled";
+import Subheading from "components/Subheading.styled";
+import Highlight from "components/Highlight.styled";
 
 import phoneIcon from "assets/icons/phone.svg";
+import arrowIcon from "assets/icons/arrow.svg";
 
 function App() {
   return (
@@ -47,11 +52,28 @@ function App() {
                   />
                   <PhoneNumber>(+1) 943-888-609</PhoneNumber>
                 </ButtonWithIcon>
-                <Button variant="contained">Get in touch</Button>
+                <Button variant="outlined" pill>
+                  Get in touch
+                </Button>
               </FlexContainer>
             </Navigation>
           </Container>
         </Header>
+        <HeroSection>
+          <Container>
+            <Heading mb="xs">
+              Bringing cars <Highlight>back to life.</Highlight>
+            </Heading>
+            <Subheading width="60%" mb="lg">
+              Labore ad minim labore eiusmod id tempor nostrud est. Consectetur
+              ad ad consequat aliqua quis.
+            </Subheading>
+            <ButtonWithIcon variant="contained">
+              <span>Contact us</span>
+              <img src={arrowIcon} alt="arrow icon" />
+            </ButtonWithIcon>
+          </Container>
+        </HeroSection>
       </div>
     </ThemeProvider>
   );

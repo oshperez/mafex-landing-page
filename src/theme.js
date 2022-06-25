@@ -2,14 +2,18 @@ const theme = {
   palette: {
     primary: {
       main: "#ff4d5c",
-      light: "#FD606E",
+      light: "#ff8289",
+      dark: "#c50033",
+    },
+    common: {
+      lightPink: "#f8e4e4",
     },
     text: {
       primary: "#420308",
     },
   },
   shape: {
-    borderRadius: "4px",
+    borderRadius: "8px",
   },
   shadow: {
     dropShadow: "0px 3px 3px rgba(0, 0, 0, 0.25)",
@@ -30,6 +34,13 @@ const theme = {
     fontWeightSemiBold: 600,
     fontWeightBold: 700,
   },
+  spacing: {
+    xs: "0.25em", 
+    sm: "0.5em",
+    md: "1em",
+    lg: "2em",
+    xl: "4em"
+  }
 };
 
 export default theme;
