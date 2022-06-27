@@ -14,9 +14,18 @@ import HeroSection from "components/HeroSection.styled";
 import Heading from "components/Heading.styled";
 import Subheading from "components/Subheading.styled";
 import Highlight from "components/Highlight.styled";
+import Section from "components/Section.styled";
+import ServiceCard, {
+  ServiceCardImg,
+  ServiceCardTextContainer,
+} from "components/ServiceCard.styled";
 
 import phoneIcon from "assets/icons/phone.svg";
 import arrowIcon from "assets/icons/arrow.svg";
+import autoPatchImg from "assets/images/panel-patch.jpg";
+import Divider from "components/Divider.styled";
+import GridWrap from "components/GridWrap";
+import serviceCardData from "components/ServiceCard.data";
 
 function App() {
   return (
@@ -74,6 +83,30 @@ function App() {
             </ButtonWithIcon>
           </Container>
         </HeroSection>
+        <Section>
+          <Container>
+            <Heading textAlign="center" uppercase>
+              What we do.
+            </Heading>
+            <Divider width="80px" thickness="4px" color="text-primary" round />
+            <Subheading textAlign="center" mb="md" mt="md">
+              Adipisicing deserunt culpa proident labore nostrud adipisicing
+              dolor officia fugiat.
+            </Subheading>
+            <GridWrap mt="xxl">
+              {serviceCardData.map(({ serviceName, description, image }) => (
+                <ServiceCard>
+                  <ServiceCardImg src={image} />
+                  <ServiceCardTextContainer>
+                    <h2>{serviceName}</h2>
+                    <Divider fullWidth gutterBottom />
+                    <p>{description} </p>
+                  </ServiceCardTextContainer>
+                </ServiceCard>
+              ))}
+            </GridWrap>
+          </Container>
+        </Section>
       </div>
     </ThemeProvider>
   );

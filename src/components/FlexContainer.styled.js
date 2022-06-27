@@ -30,7 +30,7 @@ const FlexContainer = styled.div`
   ${({ dropShadow, theme }) =>
   dropShadow &&
   css`
-    filter: drop-shadow(${theme.shadow.dropShadow});
+    filter: drop-shadow(${theme.shadow.dropShadow[0]});
   `}
 `;
 

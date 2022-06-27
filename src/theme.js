@@ -10,13 +10,17 @@ const theme = {
     },
     text: {
       primary: "#420308",
+      disabled: "rgba(0, 0, 0, 0.3)",
     },
   },
   shape: {
     borderRadius: "8px",
   },
   shadow: {
-    dropShadow: "0px 3px 3px rgba(0, 0, 0, 0.25)",
+    dropShadow: [
+      "0px 3px 3px rgba(0, 0, 0, 0.25)",
+      "4px 4px 20px rgba(0, 0, 0, 0.1)",
+    ],
   },
   typography: {
     fontFamily: "'Nunito', sans-serif",
@@ -35,12 +39,13 @@ const theme = {
     fontWeightBold: 700,
   },
   spacing: {
-    xs: "0.25em", 
+    xs: "0.25em",
     sm: "0.5em",
     md: "1em",
     lg: "2em",
-    xl: "4em"
-  }
+    xl: "4em",
+    xxl: "8em",
+  },
 };
 
 export default theme;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { kebabCaseToCamelCase } from "utils/helpers";
 
 const Heading = styled.h1.attrs((props) => ({
@@ -9,13 +9,20 @@ const Heading = styled.h1.attrs((props) => ({
     props.theme.typography[
       `fontWeight${kebabCaseToCamelCase(props.fontWeight)}`
     ] || props.theme.typography.fontWeightBold,
+  textAlign: props.textAlign || "start",
   marginTop: props.theme.spacing[`${props.mt}`] || "unset",
   marginBottom: props.theme.spacing[`${props.mb}`] || props.theme.spacing.xs,
 }))`
   font-size: ${(props) => props.fontSize};
   font-weight: ${(props) => props.fontWeight};
+  text-align: ${(props) => props.textAlign};
   margin-top: ${(props) => props.marginTop};
   margin-bottom: ${(props) => props.marginBottom};
+
+  ${(props) => props.uppercase && css`
+    text-transform: uppercase;
+  `}
+
 `;
 
 export default Heading;
