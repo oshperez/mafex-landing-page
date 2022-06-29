@@ -19,10 +19,24 @@ const Heading = styled.h1.attrs((props) => ({
   margin-top: ${(props) => props.marginTop};
   margin-bottom: ${(props) => props.marginBottom};
 
-  ${(props) => props.uppercase && css`
-    text-transform: uppercase;
-  `}
+  ${(props) =>
+    props.uppercase &&
+    css`
+      text-transform: uppercase;
+    `}
 
+  ${(props) =>
+    props.oneWordPerLine &&
+    css`
+      word-spacing: 999rem;
+    `}
+
+  
+  ${(props) =>
+    props.lineHeight &&
+    css`
+      line-height: ${props.lineHeight};
+    `}
 `;
 
 export default Heading;

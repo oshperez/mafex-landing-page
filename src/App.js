@@ -19,13 +19,15 @@ import ServiceCard, {
   ServiceCardImg,
   ServiceCardTextContainer,
 } from "components/ServiceCard.styled";
-
-import phoneIcon from "assets/icons/phone.svg";
-import arrowIcon from "assets/icons/arrow.svg";
-import autoPatchImg from "assets/images/panel-patch.jpg";
 import Divider from "components/Divider.styled";
 import GridWrap from "components/GridWrap";
 import serviceCardData from "components/ServiceCard.data";
+import GridArea from "components/GridArea.styled";
+
+import phoneIcon from "assets/icons/phone.svg";
+import arrowIcon from "assets/icons/arrow.svg";
+import technicianImage from "assets/images/technician.png";
+import carRearEndImage from "assets/images/car-rear-end.jpg";
 
 function App() {
   return (
@@ -105,6 +107,42 @@ function App() {
                 </ServiceCard>
               ))}
             </GridWrap>
+          </Container>
+        </Section>
+        <Section>
+          <Container disableRightGutter>
+            <GridArea>
+              <div>
+                <Heading uppercase oneWordPerLine lineHeight="2em" mb="sm">
+                  Who we are.
+                </Heading>
+                <Divider
+                  position="start"
+                  width="80px"
+                  thickness="4px"
+                  color="text-primary"
+                  round
+                />
+              </div>
+              <div>
+                <Subheading>Aliquip elit tempor sint ad ad.</Subheading>
+                <p>
+                  Elit commodo dolore minim ipsum cupidatat officia culpa eu do
+                  aliquip. Dolore nostrud culpa tempor nisi proident esse qui
+                  elit enim et. Qui occaecat occaecat occaecat cupidatat enim.
+                  Lorem qui ex ut dolor amet amet cillum quis.Aliqua aliquip
+                  reprehenderit eu aliqua ad officia sunt fugiat elit sint. Qui
+                  ipsum voluptate mollit elit culpa. Aliqua esse non commodo
+                  Lorem anim laboris qui laboris esse consectetur deserunt sunt.
+                  Ea sint consequat eu dolore anim deserunt cillum qui
+                  excepteur.
+                </p>
+              </div>
+              <div>
+                <img src={technicianImage} alt="Technician repairig car" />
+              </div>
+              <img src={carRearEndImage} alt="Rear-end of classic car" />
+            </GridArea>
           </Container>
         </Section>
       </div>
