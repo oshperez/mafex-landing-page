@@ -28,6 +28,9 @@ import phoneIcon from "assets/icons/phone.svg";
 import arrowIcon from "assets/icons/arrow.svg";
 import technicianImage from "assets/images/technician.png";
 import carRearEndImage from "assets/images/car-rear-end.jpg";
+import ContactSectionGrid from "components/ContactSectionGrid.styled";
+import ContactCard from "components/ContactCard.syled";
+import ContactForm from "components/ContactForm";
 
 function App() {
   return (
@@ -143,6 +146,27 @@ function App() {
               </div>
               <img src={carRearEndImage} alt="Rear-end of classic car" />
             </GridArea>
+          </Container>
+        </Section>
+        <Section>
+          <Container>
+            <ContactSectionGrid>
+              <div></div>
+              <div>
+                <ContactCard>
+                  <Heading>Let's talk.</Heading>
+                  <Divider
+                    position="start"
+                    width="60px"
+                    thickness="3px"
+                    color="text-primary"
+                    round
+                  />
+                  <Subheading fontSize="500" mt="md" mb="lg">Share your excitment with us.</Subheading>
+                  <ContactForm />
+                </ContactCard>
+              </div>
+            </ContactSectionGrid>
           </Container>
         </Section>
       </div>

@@ -17,6 +17,7 @@ const theme = {
     borderRadius: "8px",
   },
   shadow: {
+    boxShadow: ["5px 5px 25px rgba(0, 0, 0, 0.1)"],
     dropShadow: [
       "0px 3px 3px rgba(0, 0, 0, 0.25)",
       "4px 4px 20px rgba(0, 0, 0, 0.1)",

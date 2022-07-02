@@ -12,7 +12,6 @@ const Button = styled.a`
     css`
       font-size: ${({ theme }) => theme.typography.fontSize300};
       text-transform: uppercase;
-      color: #fff;
       background-color: ${theme.palette.primary.main};
       padding-block: 1rem;
       &:hover {
@@ -34,6 +33,26 @@ const Button = styled.a`
     css`
       border-radius: 200px;
     `}
+
+  ${({ fullWidth }) =>
+    fullWidth &&
+    css`
+      width: 100%;
+    `}
+
+  ${({ mt }) =>
+    mt &&
+    css`
+      margin-top: ${({theme}) => theme.spacing[mt]};
+    `}
+
+  ${({ mb }) =>
+    mb &&
+    css`
+      margin-bottom: ${({theme}) => theme.spacing[mb]};
+    `}
+
+
 `;
 
 export const ButtonWithIcon = styled(Button)`
