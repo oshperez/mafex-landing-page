@@ -1,3 +1,4 @@
+import React from "react";
 import styled, { css } from "styled-components";
 
 const StyledInputField = styled.input`
@@ -11,6 +12,22 @@ const StyledInputField = styled.input`
   &:focus-visible {
     outline: 2px solid ${({ theme }) => theme.palette.primary.main};
   }
+
+  ${({ outlineDisabled }) =>
+    outlineDisabled &&
+    css`
+      outline: none;
+
+      &:focus-visible {
+        outline: none;
+      }
+    `}
+    
+  ${({ pill }) =>
+    pill &&
+    css`
+      border-radius: 200px;
+    `}
 
   ${(props) =>
     props.as === "textarea" &&
@@ -57,30 +74,23 @@ const InputField = ({
   name,
   startIcon,
   gutterBottom,
-  textarea,
   required,
   ...props
 }) => {
-  if (textarea) {
-    return (
-      <InputContainer gutterBottom={gutterBottom}>
-        <InputLabel for={name}>{`${label}${required ? " *" : ""}`}</InputLabel>
-        <StyledInputField
-          name={name}
-          required={required}
-          as="textarea"
-          {...props}
-        />
-      </InputContainer>
-    );
-  }
+  const inputField = (
+    <StyledInputField name={name} required={required} {...props} />
+  );
 
   return (
     <InputContainer gutterBottom={gutterBottom}>
-      <InputLabel for={name}>{`${label}${required ? " *" : ""}`}</InputLabel>
-      <InputFielddWrapper startIcon={startIcon}>
-        <StyledInputField name={name} required={required} {...props} />
-      </InputFielddWrapper>
+      {label && (
+        <InputLabel for={name}>{`${label}${required ? " *" : ""}`}</InputLabel>
+      )}
+      {startIcon
+        ? React.cloneElement(<InputFielddWrapper />, { startIcon }, [
+            inputField,
+          ])
+        : inputField}
     </InputContainer>
   );
 };

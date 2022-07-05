@@ -47,6 +47,10 @@ const theme = {
     xl: "4em",
     xxl: "8em",
   },
+  sizes: {
+    spacing: ["xs", "sm", "md", "lg", "xl", "xxl"],
+    font: ["200", "300", "400", "500", "600", "700", "800", "900"]
+  }
 };
 
 export default theme;

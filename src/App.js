@@ -31,6 +31,14 @@ import carRearEndImage from "assets/images/car-rear-end.jpg";
 import ContactSectionGrid from "components/ContactSectionGrid.styled";
 import ContactCard from "components/ContactCard.syled";
 import ContactForm from "components/ContactForm";
+import Footer from "components/Footer.styled";
+import FooterGrid from "components/FooterGrid.styled";
+import FooterNav from "components/FooterNav.styled";
+import CopyRight from "components/CopyRight.styled";
+import Link from "components/Link.styled";
+import FooterBootom from "components/FooterBottom.styled";
+import NewsletterForm from "components/NewsletterForm";
+import SocialLinkList from "components/SocialLinkList";
 
 function App() {
   return (
@@ -162,13 +170,132 @@ function App() {
                     color="text-primary"
                     round
                   />
-                  <Subheading fontSize="500" mt="md" mb="lg">Share your excitment with us.</Subheading>
+                  <Subheading fontSize="500" mt="md" mb="lg">
+                    Share your excitment with us.
+                  </Subheading>
                   <ContactForm />
                 </ContactCard>
               </div>
             </ContactSectionGrid>
           </Container>
         </Section>
+        <Footer>
+          <Container>
+            <FooterGrid>
+              <Logo>Logo</Logo>
+              <FooterNav>
+                <div>
+                  <Subheading
+                    as="h3"
+                    fontSize="400"
+                    fontWeight="semi-bold"
+                    uppercase
+                    mb="xs"
+                  >
+                    Company
+                  </Subheading>
+                  <Divider
+                    position="start"
+                    width="60px"
+                    thickness="1px"
+                    color="primary"
+                    gutterBottom
+                  />
+                  <ul>
+                    <li>
+                      <Link my="sm">Services</Link>
+                    </li>
+                    <li>
+                      <Link my="sm">About us</Link>
+                    </li>
+                    <li>
+                      <Link my="sm">Contact</Link>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <Subheading
+                    as="h3"
+                    fontSize="400"
+                    fontWeight="semi-bold"
+                    uppercase
+                    mb="xs"
+                  >
+                    Legal
+                  </Subheading>
+                  <Divider
+                    position="start"
+                    width="60px"
+                    thickness="1px"
+                    color="primary"
+                    gutterBottom
+                  />
+                  <ul>
+                    <li>
+                      <Link my="sm">License</Link>
+                    </li>
+                    <li>
+                      <Link my="sm">Privicy Policy</Link>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <Subheading
+                    as="h3"
+                    fontSize="400"
+                    fontWeight="semi-bold"
+                    uppercase
+                    mb="xs"
+                  >
+                    Contact
+                  </Subheading>
+                  <Divider
+                    position="start"
+                    width="60px"
+                    thickness="1px"
+                    color="primary"
+                    gutterBottom
+                  />
+                  <ul>
+                    <li>
+                      <Link as="p" my="sm">
+                        (+1) 943-888-609
+                      </Link>
+                    </li>
+                    <li>
+                      <Link as="p" my="sm">
+                        company@gmail.com
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </FooterNav>
+              <div style={{ gridArea: "newsletter" }}>
+                <Subheading fontSize="500" fontWeight="semi-bold" uppercase>
+                  Stay tuned.
+                </Subheading>
+                <NewsletterForm />
+              </div>
+              <Divider
+                style={{ gridArea: "divider" }}
+                fullWidth
+                thickness="0.5px"
+                gutterBottom
+              />
+              <FooterBootom>
+                <CopyRight>
+                  <p>&copy;2022 Company. All rights reserved</p>
+                </CopyRight>
+                <div>
+                  <FlexContainer dropShadow>
+                    <p style={{ marginRight: "2rem" }}>Find us on</p>
+                    <SocialLinkList />
+                  </FlexContainer>
+                </div>
+              </FooterBootom>
+            </FooterGrid>
+          </Container>
+        </Footer>
       </div>
     </ThemeProvider>
   );

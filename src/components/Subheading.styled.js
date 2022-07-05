@@ -24,6 +24,12 @@ const Subheading = styled.h2.attrs((props) => ({
     css`
       width: ${width};
     `}
+
+  ${({ uppercase }) =>
+    uppercase &&
+    css`
+      text-transform: uppercase;
+    `}
 `;
 
 export default Subheading;

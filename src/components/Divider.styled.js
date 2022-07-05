@@ -44,11 +44,13 @@ const Divider = styled.div.attrs((props) => ({
     css`
       border-radius: 200px;
     `}
+
   ${({ position }) =>
     position === "start" &&
     css`
       margin-left: 0;
     `}
+
   ${({ position }) =>
     position === "end" &&
     css`

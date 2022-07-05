@@ -1,6 +1,6 @@
 import StyledContactForm from "components/ContactForm.styled";
-import Button from "./Button.styled";
-import InputField from "./InputField";
+import Button from "components/Button.styled";
+import InputField from "components/InputField";
 
 import phoneIcon from "assets/icons/phone.svg";
 import envelopeIcon from "assets/icons/envelope.svg";
@@ -23,7 +23,14 @@ const ContactForm = (props) => {
         startIcon={phoneIcon}
         gutterBottom
       />
-      <InputField label="Message" name="mesage" textarea rows="5" required />
+      <InputField
+        as="textarea"
+        label="Message"
+        name="mesage"
+        textarea
+        rows="5"
+        required
+      />
       <Button as="button" type="submit" variant="contained" fullWidth mt="lg">
         Send
       </Button>
