@@ -1,7 +1,9 @@
 import styled, { css } from "styled-components";
+import { spaceMixin } from "utils/mixins";
 
 const FlexContainer = styled.div`
   display: flex;
+  ${spaceMixin}
 
   ${({ flexDirection }) =>
     flexDirection &&
@@ -28,10 +30,10 @@ const FlexContainer = styled.div`
     `}
   
   ${({ dropShadow, theme }) =>
-  dropShadow &&
-  css`
-    filter: drop-shadow(${theme.shadow.dropShadow[0]});
-  `}
+    dropShadow &&
+    css`
+      filter: drop-shadow(${theme.shadow.dropShadow[0]});
+    `}
 `;
 
 export default FlexContainer;

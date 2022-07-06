@@ -9,10 +9,7 @@ import Button, { ButtonWithIcon } from "./components/Button.styled";
 import Header from "components/Header.styled";
 import NavLink from "components/NavLink.styled";
 import FlexContainer from "components/FlexContainer.styled";
-import PhoneNumber from "components/PhoneNumber.styled";
 import HeroSection from "components/HeroSection.styled";
-import Heading from "components/Heading.styled";
-import Subheading from "components/Subheading.styled";
 import Highlight from "components/Highlight.styled";
 import Section from "components/Section.styled";
 import ServiceCard, {
@@ -23,28 +20,27 @@ import Divider from "components/Divider.styled";
 import GridWrap from "components/GridWrap";
 import serviceCardData from "components/ServiceCard.data";
 import GridArea from "components/GridArea.styled";
-
-import phoneIcon from "assets/icons/phone.svg";
-import arrowIcon from "assets/icons/arrow.svg";
-import technicianImage from "assets/images/technician.png";
-import carRearEndImage from "assets/images/car-rear-end.jpg";
 import ContactSectionGrid from "components/ContactSectionGrid.styled";
 import ContactCard from "components/ContactCard.syled";
 import ContactForm from "components/ContactForm";
 import Footer from "components/Footer.styled";
 import FooterGrid from "components/FooterGrid.styled";
-import FooterNav from "components/FooterNav.styled";
-import CopyRight from "components/CopyRight.styled";
 import Link from "components/Link.styled";
-import FooterBootom from "components/FooterBottom.styled";
 import NewsletterForm from "components/NewsletterForm";
 import SocialLinkList from "components/SocialLinkList";
+import Box from "components/Box/Box.styled";
+import Typography from "components/Typography/Typography.styled";
+
+import phoneIcon from "assets/icons/phone.svg";
+import arrowIcon from "assets/icons/arrow.svg";
+import technicianImage from "assets/images/technician.png";
+import carRearEndImage from "assets/images/car-rear-end.jpg";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <div className="App">
+      <div>
         <Header>
           <Container>
             <Navigation>
@@ -72,7 +68,7 @@ function App() {
                     alt="phone icon"
                     style={{ with: 16, height: 17 }}
                   />
-                  <PhoneNumber>(+1) 943-888-609</PhoneNumber>
+                  <Typography fontSize="300">(+1) 943-888-609</Typography>
                 </ButtonWithIcon>
                 <Button variant="outlined" pill>
                   Get in touch
@@ -83,13 +79,13 @@ function App() {
         </Header>
         <HeroSection>
           <Container>
-            <Heading mb="xs">
+            <Typography as="h1">
               Bringing cars <Highlight>back to life.</Highlight>
-            </Heading>
-            <Subheading width="60%" mb="lg">
+            </Typography>
+            <Typography as="h2" css="width: 60%">
               Labore ad minim labore eiusmod id tempor nostrud est. Consectetur
               ad ad consequat aliqua quis.
-            </Subheading>
+            </Typography>
             <ButtonWithIcon variant="contained">
               <span>Contact us</span>
               <img src={arrowIcon} alt="arrow icon" />
@@ -98,14 +94,14 @@ function App() {
         </HeroSection>
         <Section>
           <Container>
-            <Heading textAlign="center" uppercase>
+            <Typography as="h1" textAlign="center" uppercase>
               What we do.
-            </Heading>
+            </Typography>
             <Divider width="80px" thickness="4px" color="text-primary" round />
-            <Subheading textAlign="center" mb="md" mt="md">
+            <Typography as="h2" textAlign="center" mb="md" mt="md">
               Adipisicing deserunt culpa proident labore nostrud adipisicing
               dolor officia fugiat.
-            </Subheading>
+            </Typography>
             <GridWrap mt="xxl">
               {serviceCardData.map(({ serviceName, description, image }) => (
                 <ServiceCard>
@@ -124,9 +120,14 @@ function App() {
           <Container disableRightGutter>
             <GridArea>
               <div>
-                <Heading uppercase oneWordPerLine lineHeight="2em" mb="sm">
+                <Typography
+                  as="h1"
+                  uppercase
+                  oneWordPerLine
+                  lineHeight="2.125em"
+                >
                   Who we are.
-                </Heading>
+                </Typography>
                 <Divider
                   position="start"
                   width="80px"
@@ -136,8 +137,8 @@ function App() {
                 />
               </div>
               <div>
-                <Subheading>Aliquip elit tempor sint ad ad.</Subheading>
-                <p>
+                <Typography as="h2">Aliquip elit tempor sint ad ad.</Typography>
+                <Typography>
                   Elit commodo dolore minim ipsum cupidatat officia culpa eu do
                   aliquip. Dolore nostrud culpa tempor nisi proident esse qui
                   elit enim et. Qui occaecat occaecat occaecat cupidatat enim.
@@ -147,7 +148,7 @@ function App() {
                   Lorem anim laboris qui laboris esse consectetur deserunt sunt.
                   Ea sint consequat eu dolore anim deserunt cillum qui
                   excepteur.
-                </p>
+                </Typography>
               </div>
               <div>
                 <img src={technicianImage} alt="Technician repairig car" />
@@ -162,17 +163,17 @@ function App() {
               <div></div>
               <div>
                 <ContactCard>
-                  <Heading>Let's talk.</Heading>
+                  <Typography as="h1">Let's talk.</Typography>
                   <Divider
                     position="start"
-                    width="60px"
-                    thickness="3px"
+                    width="80px"
+                    thickness="4px"
                     color="text-primary"
                     round
                   />
-                  <Subheading fontSize="500" mt="md" mb="lg">
+                  <Typography as="h2" mt="md">
                     Share your excitment with us.
-                  </Subheading>
+                  </Typography>
                   <ContactForm />
                 </ContactCard>
               </div>
@@ -183,9 +184,13 @@ function App() {
           <Container>
             <FooterGrid>
               <Logo>Logo</Logo>
-              <FooterNav>
+              <FlexContainer
+                css="grid-area: nav"
+                py="lg"
+                justifyContent="space-between"
+              >
                 <div>
-                  <Subheading
+                  <Typography
                     as="h3"
                     fontSize="400"
                     fontWeight="semi-bold"
@@ -193,7 +198,7 @@ function App() {
                     mb="xs"
                   >
                     Company
-                  </Subheading>
+                  </Typography>
                   <Divider
                     position="start"
                     width="60px"
@@ -214,7 +219,7 @@ function App() {
                   </ul>
                 </div>
                 <div>
-                  <Subheading
+                  <Typography
                     as="h3"
                     fontSize="400"
                     fontWeight="semi-bold"
@@ -222,7 +227,7 @@ function App() {
                     mb="xs"
                   >
                     Legal
-                  </Subheading>
+                  </Typography>
                   <Divider
                     position="start"
                     width="60px"
@@ -240,7 +245,7 @@ function App() {
                   </ul>
                 </div>
                 <div>
-                  <Subheading
+                  <Typography
                     as="h3"
                     fontSize="400"
                     fontWeight="semi-bold"
@@ -248,7 +253,7 @@ function App() {
                     mb="xs"
                   >
                     Contact
-                  </Subheading>
+                  </Typography>
                   <Divider
                     position="start"
                     width="60px"
@@ -269,30 +274,41 @@ function App() {
                     </li>
                   </ul>
                 </div>
-              </FooterNav>
-              <div style={{ gridArea: "newsletter" }}>
-                <Subheading fontSize="500" fontWeight="semi-bold" uppercase>
+              </FlexContainer>
+              <Box css="grid-area: newsletter" my="lg">
+                <Typography
+                  as="h2"
+                  mb="md"
+                  fontSize="500"
+                  fontWeight="semi-bold"
+                  uppercase
+                >
                   Stay tuned.
-                </Subheading>
+                </Typography>
                 <NewsletterForm />
-              </div>
+              </Box>
               <Divider
-                style={{ gridArea: "divider" }}
+                css="grid-area: divider"
                 fullWidth
                 thickness="0.5px"
                 gutterBottom
               />
-              <FooterBootom>
-                <CopyRight>
-                  <p>&copy;2022 Company. All rights reserved</p>
-                </CopyRight>
-                <div>
-                  <FlexContainer dropShadow>
-                    <p style={{ marginRight: "2rem" }}>Find us on</p>
-                    <SocialLinkList />
-                  </FlexContainer>
-                </div>
-              </FooterBootom>
+              <FlexContainer
+                css="grid-area: footer-bottom"
+                justifyContent="space-between"
+                mt="md"
+                mb="lg"
+              >
+                <Typography fontSize="300">
+                  &copy;2022 Company. All rights reserved
+                </Typography>
+                <FlexContainer dropShadow>
+                  <Box mr="lg">
+                    <Typography>Find us on</Typography>
+                  </Box>
+                  <SocialLinkList />
+                </FlexContainer>
+              </FlexContainer>
             </FooterGrid>
           </Container>
         </Footer>

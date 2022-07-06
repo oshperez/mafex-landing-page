@@ -10,22 +10,22 @@ const SocialLinkList = (props) => {
   return (
     <StyledSocialLinkList>
       <li>
-        <Link href="facebook.com" mr="lg">
+        <Link href="https://www.facebook.com" mr="lg">
           <FacebookIcon />
         </Link>
       </li>
       <li>
-        <Link href="youtube.com" mr="lg">
+        <Link href="https://wwww.youtube.com" mr="lg">
           <YoutubeIcon />
         </Link>
       </li>
       <li>
-        <Link href="twitter.com" mr="lg">
+        <Link href="https://www.twitter.com" mr="lg">
           <TwitterIcon />
         </Link>
       </li>
       <li>
-        <Link href="instagram.com">
+        <Link href="https://www.instagram.com">
           <InstagramIcon />
         </Link>
       </li>

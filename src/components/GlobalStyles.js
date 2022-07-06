@@ -19,8 +19,25 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
+  p {
+    font-size: ${({ theme }) => theme.typography.fontSize400};
+  }
+
+  h1 {
+    font-size: ${({ theme }) => theme.typography.fontSize800};
+    font-weight: ${({ theme }) => theme.typography.fontWeightBold};
+    margin-bottom: ${({ theme }) => theme.spacing.xs};
+  }
+  
+  h2 {
+    font-size: ${({ theme }) => theme.typography.fontSize600};
+    font-weight: ${({ theme }) => theme.typography.fontWeightRegular};
+    margin-bottom: ${({ theme }) => theme.spacing.lg};
+
+  }
+
   input, textarea {
-    font-size: ${({theme}) => theme.typography.fontSize400};
+    font-size: ${({ theme }) => theme.typography.fontSize400};
   }
 `;
 
