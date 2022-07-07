@@ -5,7 +5,7 @@ import theme from "./theme";
 import Container from "components/Container.styled";
 import Logo from "components/Logo.styled";
 import Navigation from "components/Navigation.styled";
-import Button, { ButtonWithIcon } from "./components/Button.styled";
+import Button from "components/Button/Button";
 import Header from "components/Header.styled";
 import NavLink from "components/NavLink.styled";
 import FlexContainer from "components/FlexContainer.styled";
@@ -31,8 +31,8 @@ import SocialLinkList from "components/SocialLinkList";
 import Box from "components/Box/Box.styled";
 import Typography from "components/Typography/Typography.styled";
 
-import phoneIcon from "assets/icons/phone.svg";
-import arrowIcon from "assets/icons/arrow.svg";
+import { ReactComponent as PhoneIcon } from "assets/icons/phone.svg";
+import { ReactComponent as ArrowIcon } from "assets/icons/arrow.svg";
 import technicianImage from "assets/images/technician.png";
 import carRearEndImage from "assets/images/car-rear-end.jpg";
 
@@ -62,15 +62,10 @@ function App() {
                 </li>
               </ul>
               <FlexContainer dropShadow>
-                <ButtonWithIcon>
-                  <img
-                    src={phoneIcon}
-                    alt="phone icon"
-                    style={{ with: 16, height: 17 }}
-                  />
-                  <Typography fontSize="300">(+1) 943-888-609</Typography>
-                </ButtonWithIcon>
-                <Button variant="outlined" pill>
+                <Button startIcon={<PhoneIcon width={15} />} fontSize="300">
+                  (+1) 943-888-609
+                </Button>
+                <Button variant="outlined" size="small" pill>
                   Get in touch
                 </Button>
               </FlexContainer>
@@ -86,10 +81,9 @@ function App() {
               Labore ad minim labore eiusmod id tempor nostrud est. Consectetur
               ad ad consequat aliqua quis.
             </Typography>
-            <ButtonWithIcon variant="contained">
-              <span>Contact us</span>
-              <img src={arrowIcon} alt="arrow icon" />
-            </ButtonWithIcon>
+            <Button endIcon={<ArrowIcon />} variant="contained" size="large" uppercase>
+              Contact us
+            </Button>
           </Container>
         </HeroSection>
         <Section>

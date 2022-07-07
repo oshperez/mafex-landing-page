@@ -1,19 +1,44 @@
 import styled, { css } from "styled-components";
+import { fontMixin, spaceMixin } from "utils/mixins";
 
-const Button = styled.a`
+const StyledButton = styled.a`
   font-size: ${({ theme }) => theme.typography.fontSize400};
   font-weight: ${({ theme }) => theme.typography.fontWeightSemiBold};
-  padding: 0.75rem 1.25rem;
+  padding: 1em 1.75em;
   border-radius: ${({ theme }) => theme.shape.borderRadius};
   cursor: pointer;
 
-  ${({ variant, theme }) =>
+  ${spaceMixin}
+  ${fontMixin}
+  
+  ${({ size }) =>
+    size === "large" &&
+    css`
+      padding: 1.25em 2em;
+    `}
+
+  ${({ size }) =>
+    size === "small" &&
+    css`
+      padding: 0.85em 1.5em;
+    `}
+
+  ${({ startIcon, endIcon }) =>
+    (startIcon || endIcon) &&
+    css`
+      display: flex;
+      align-items: center;
+      width: fit-content;
+
+      & > *:first-child {
+        margin-right: 10px;
+      }
+    `}
+
+    ${({ variant, theme }) =>
     variant === "contained" &&
     css`
-      font-size: ${({ theme }) => theme.typography.fontSize300};
-      text-transform: uppercase;
       background-color: ${theme.palette.primary.main};
-      padding-block: 1rem;
       &:hover {
         opacity: 0.95;
       }
@@ -28,10 +53,10 @@ const Button = styled.a`
       }
     `}
 
-  ${({ pill }) =>
+    ${({ pill }) =>
     pill &&
     css`
-      border-radius: 200px;
+      border-radius: 500px;
     `}
 
   ${({ fullWidth }) =>
@@ -39,29 +64,11 @@ const Button = styled.a`
     css`
       width: 100%;
     `}
-
-  ${({ mt }) =>
-    mt &&
+  ${({ uppercase }) =>
+    uppercase &&
     css`
-      margin-top: ${({theme}) => theme.spacing[mt]};
+      text-transform: uppercase;
     `}
-
-  ${({ mb }) =>
-    mb &&
-    css`
-      margin-bottom: ${({theme}) => theme.spacing[mb]};
-    `}
-
-
 `;
 
-export const ButtonWithIcon = styled(Button)`
-  display: flex;
-  width: fit-content;
-  align-items: center;
-  & > *:first-child {
-    margin-right: 10px;
-  }
-`;
-
-export default Button;
+export default StyledButton;

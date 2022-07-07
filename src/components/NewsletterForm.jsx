@@ -1,14 +1,15 @@
 import InputField from "./InputField";
-import planeIcon from "assets/icons/plane.svg";
 import StyledNewsletterForm from "./NewsletterForm.styled";
+import { ReactComponent as PlaneIcon } from "assets/icons/plane.svg";
+import Button from "./Button/Button";
 
 const NewsletterForm = (props) => {
   return (
     <StyledNewsletterForm>
-      <InputField outlineDisabled pill placeholder="Enter your email" />
-      <button>
-        <img src={planeIcon} alt="plane icon" />
-      </button>
+      <InputField placeholder="Enter your email" outlineDisabled pill />
+      <Button as="button" type="submit" variant="contained">
+        <PlaneIcon css="display: flex" />
+      </Button>
     </StyledNewsletterForm>
   );
 };

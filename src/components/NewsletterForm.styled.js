@@ -5,12 +5,14 @@ const StyledNewsletterForm = styled.form`
 
   & > button {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     right: 0;
     top: 0;
     width: 50px;
     height: 100%;
-    background-color: ${({ theme }) => theme.palette.primary.main};
-    padding: 0.45rem;
+    padding: 0;
     border-bottom-left-radius: 500px;
     border-bottom-right-radius: 500px;
     border-top-right-radius: 500px;

@@ -1,5 +1,5 @@
 import StyledContactForm from "components/ContactForm.styled";
-import Button from "components/Button.styled";
+import Button from "./Button/Button";
 import InputField from "components/InputField";
 
 import phoneIcon from "assets/icons/phone.svg";
@@ -31,7 +31,14 @@ const ContactForm = (props) => {
         rows="5"
         required
       />
-      <Button as="button" type="submit" variant="contained" fullWidth mt="lg">
+      <Button
+        as="button"
+        type="submit"
+        variant="contained"
+        mt="lg"
+        fullWidth
+        uppercase
+      >
         Send
       </Button>
     </StyledContactForm>
