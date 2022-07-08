@@ -27,9 +27,11 @@ import Footer from "components/Footer.styled";
 import FooterGrid from "components/FooterGrid.styled";
 import Link from "components/Link.styled";
 import NewsletterForm from "components/NewsletterForm";
-import SocialLinkList from "components/SocialLinkList";
+import SocialLinkList from "components/SocialLinkList/SocialLinkList";
 import Box from "components/Box/Box.styled";
 import Typography from "components/Typography/Typography.styled";
+import List from "components/List/List.styled";
+import ListItem from "components/ListItem/ListItem.styled";
 
 import { ReactComponent as PhoneIcon } from "assets/icons/phone.svg";
 import { ReactComponent as ArrowIcon } from "assets/icons/arrow.svg";
@@ -45,22 +47,22 @@ function App() {
           <Container>
             <Navigation>
               <Logo>Logo</Logo>
-              <ul>
-                <li>
+              <List direction="row" dense>
+                <ListItem>
                   <NavLink href="#" active>
                     Home
                   </NavLink>
-                </li>
-                <li>
+                </ListItem>
+                <ListItem>
+                  <NavLink href="#">Services</NavLink>
+                </ListItem>
+                <ListItem>
                   <NavLink href="#">About us</NavLink>
-                </li>
-                <li>
-                  <NavLink href="">Services</NavLink>
-                </li>
-                <li>
-                  <NavLink href="">Contact</NavLink>
-                </li>
-              </ul>
+                </ListItem>
+                <ListItem>
+                  <NavLink href="#">Contact</NavLink>
+                </ListItem>
+              </List>
               <FlexContainer dropShadow>
                 <Button startIcon={<PhoneIcon width={15} />} fontSize="300">
                   (+1) 943-888-609
@@ -81,7 +83,12 @@ function App() {
               Labore ad minim labore eiusmod id tempor nostrud est. Consectetur
               ad ad consequat aliqua quis.
             </Typography>
-            <Button endIcon={<ArrowIcon />} variant="contained" size="large" uppercase>
+            <Button
+              endIcon={<ArrowIcon />}
+              variant="contained"
+              size="large"
+              uppercase
+            >
               Contact us
             </Button>
           </Container>
@@ -200,17 +207,17 @@ function App() {
                     color="primary"
                     gutterBottom
                   />
-                  <ul>
-                    <li>
-                      <Link my="sm">Services</Link>
-                    </li>
-                    <li>
-                      <Link my="sm">About us</Link>
-                    </li>
-                    <li>
-                      <Link my="sm">Contact</Link>
-                    </li>
-                  </ul>
+                  <List>
+                    <ListItem>
+                      <Link>Services</Link>
+                    </ListItem>
+                    <ListItem>
+                      <Link>About us</Link>
+                    </ListItem>
+                    <ListItem>
+                      <Link>Contact</Link>
+                    </ListItem>
+                  </List>
                 </div>
                 <div>
                   <Typography
@@ -229,14 +236,14 @@ function App() {
                     color="primary"
                     gutterBottom
                   />
-                  <ul>
-                    <li>
-                      <Link my="sm">License</Link>
-                    </li>
-                    <li>
-                      <Link my="sm">Privicy Policy</Link>
-                    </li>
-                  </ul>
+                  <List>
+                    <ListItem>
+                      <Link>License</Link>
+                    </ListItem>
+                    <ListItem>
+                      <Link>Privacy Policy</Link>
+                    </ListItem>
+                  </List>
                 </div>
                 <div>
                   <Typography
@@ -255,18 +262,14 @@ function App() {
                     color="primary"
                     gutterBottom
                   />
-                  <ul>
-                    <li>
-                      <Link as="p" my="sm">
-                        (+1) 943-888-609
-                      </Link>
-                    </li>
-                    <li>
-                      <Link as="p" my="sm">
-                        company@gmail.com
-                      </Link>
-                    </li>
-                  </ul>
+                  <List>
+                    <ListItem>
+                      <Typography fontSize="300">(+1) 943-888-609</Typography>
+                    </ListItem>
+                    <ListItem>
+                      <Typography>company@gmail</Typography>
+                    </ListItem>
+                  </List>
                 </div>
               </FlexContainer>
               <Box css="grid-area: newsletter" my="lg">

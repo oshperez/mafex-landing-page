@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 
 const NavLink = styled.a`
   position: relative;
-  margin-inline: 1.25rem;
   padding-inline: 0.25rem;
   cursor: pointer;
 
