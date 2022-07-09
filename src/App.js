@@ -1,41 +1,40 @@
-import GlobalStyles from "components/GlobalStyles";
+import GlobalStyles from "components/GlobalStyles/GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import theme from "./theme";
 
-import Container from "components/Container.styled";
-import Logo from "components/Logo.styled";
-import Navigation from "components/Navigation.styled";
+import Container from "components/Container/Container.styled";
+import Logo from "components/Logo/Logo.styled";
+import Navigation from "components/Navigation/Navigation.styled";
 import Button from "components/Button/Button";
-import Header from "components/Header.styled";
-import NavLink from "components/NavLink.styled";
-import FlexContainer from "components/FlexContainer.styled";
-import HeroSection from "components/HeroSection.styled";
-import Highlight from "components/Highlight.styled";
-import Section from "components/Section.styled";
-import ServiceCard, {
-  ServiceCardImg,
-  ServiceCardTextContainer,
-} from "components/ServiceCard.styled";
-import Divider from "components/Divider.styled";
-import GridWrap from "components/GridWrap";
-import serviceCardData from "components/ServiceCard.data";
-import GridArea from "components/GridArea.styled";
-import ContactSectionGrid from "components/ContactSectionGrid.styled";
-import ContactCard from "components/ContactCard.syled";
-import ContactForm from "components/ContactForm";
-import Footer from "components/Footer.styled";
-import FooterGrid from "components/FooterGrid.styled";
-import Link from "components/Link.styled";
-import NewsletterForm from "components/NewsletterForm";
+import Header from "components/Header/Header.styled";
+import NavLink from "components/Link/NavLink.styled";
+import FlexContainer from "components/FlexContainer/FlexContainer.styled";
+import HeroSection from "components/HeroSection/HeroSection.styled";
+import Highlight from "components/Highlight/Highlight.styled";
+import Section from "components/Section/Section.styled";
+import ServiceCard from "components/ServiceCard/ServiceCard.styled";
+import ServiceCardImage from "components/ServiceCard/ServiceCardImage.styled";
+import ServiceCardText from "components/ServiceCard/ServiceCardText.styled";
+import Divider from "components/Divider/Divider.styled";
+import ServiceSectionGrid from "components/ServiceSectionGrid/ServiceSectionGrid.styled";
+import serviceCardData from "components/ServiceCard/ServiceCard.data";
+import AboutSectionGrid from "components/AboutSectionGrid/AboutSectionGrid.styled";
+import ContactSectionGrid from "components/ContactSectionGrid/ContactSectionGrid.styled";
+import ContactCard from "components/ContactCard/ContactCard.syled";
+import ContactForm from "components/ContactForm/ContactForm";
+import Footer from "components/Footer/Footer.styled";
+import FooterGrid from "components/Footer/FooterGrid.styled";
+import Link from "components/Link/Link.styled";
+import NewsletterForm from "components/NewsletterForm/NewsletterForm";
 import SocialLinkList from "components/SocialLinkList/SocialLinkList";
 import Box from "components/Box/Box.styled";
 import Typography from "components/Typography/Typography.styled";
 import List from "components/List/List.styled";
 import ListItem from "components/ListItem/ListItem.styled";
+import ImageWithShape from "components/ImageWithShape/ImageWithShape";
 
 import { ReactComponent as PhoneIcon } from "assets/icons/phone.svg";
 import { ReactComponent as ArrowIcon } from "assets/icons/arrow.svg";
-import technicianImage from "assets/images/technician.png";
 import carRearEndImage from "assets/images/car-rear-end.jpg";
 
 function App() {
@@ -103,24 +102,31 @@ function App() {
               Adipisicing deserunt culpa proident labore nostrud adipisicing
               dolor officia fugiat.
             </Typography>
-            <GridWrap mt="xxl">
-              {serviceCardData.map(({ serviceName, description, image }) => (
+            <ServiceSectionGrid>
+              {serviceCardData.map(({ service, description, image }) => (
                 <ServiceCard>
-                  <ServiceCardImg src={image} />
-                  <ServiceCardTextContainer>
-                    <h2>{serviceName}</h2>
+                  <ServiceCardImage src={image} />
+                  <ServiceCardText>
+                    <Typography as="h3" uppercase mb="sm">
+                      {service}
+                    </Typography>
                     <Divider fullWidth gutterBottom />
-                    <p>{description} </p>
-                  </ServiceCardTextContainer>
+                    <Typography>{description} </Typography>
+                  </ServiceCardText>
                 </ServiceCard>
               ))}
-            </GridWrap>
+            </ServiceSectionGrid>
           </Container>
         </Section>
         <Section>
           <Container disableRightGutter>
-            <GridArea>
-              <div>
+            <AboutSectionGrid>
+              <Box
+                css={`
+                  grid-area: heading;
+                  align-self: end;
+                `}
+              >
                 <Typography
                   as="h1"
                   uppercase
@@ -136,8 +142,14 @@ function App() {
                   color="text-primary"
                   round
                 />
-              </div>
-              <div>
+              </Box>
+              <Box
+                css={`
+                  grid-area: text;
+                  align-self: end;
+                  padding-right: ${({ theme }) => theme.spacing.xl};
+                `}
+              >
                 <Typography as="h2">Aliquip elit tempor sint ad ad.</Typography>
                 <Typography>
                   Elit commodo dolore minim ipsum cupidatat officia culpa eu do
@@ -150,18 +162,23 @@ function App() {
                   Ea sint consequat eu dolore anim deserunt cillum qui
                   excepteur.
                 </Typography>
-              </div>
-              <div>
-                <img src={technicianImage} alt="Technician repairig car" />
-              </div>
-              <img src={carRearEndImage} alt="Rear-end of classic car" />
-            </GridArea>
+              </Box>
+              <ImageWithShape />
+              <img
+                src={carRearEndImage}
+                alt="Rear-end of classic car"
+                css={`
+                  grid-area: img2;
+                  max-width: 100%;
+                `}
+              />
+            </AboutSectionGrid>
           </Container>
         </Section>
         <Section>
           <Container>
             <ContactSectionGrid>
-              <div></div>
+              <div />
               <div>
                 <ContactCard>
                   <Typography as="h1">Let's talk.</Typography>
@@ -196,17 +213,10 @@ function App() {
                     fontSize="400"
                     fontWeight="semi-bold"
                     uppercase
-                    mb="xs"
+                    mb="md"
                   >
                     Company
                   </Typography>
-                  <Divider
-                    position="start"
-                    width="60px"
-                    thickness="1px"
-                    color="primary"
-                    gutterBottom
-                  />
                   <List>
                     <ListItem>
                       <Link>Services</Link>
@@ -225,17 +235,10 @@ function App() {
                     fontSize="400"
                     fontWeight="semi-bold"
                     uppercase
-                    mb="xs"
+                    mb="md"
                   >
                     Legal
                   </Typography>
-                  <Divider
-                    position="start"
-                    width="60px"
-                    thickness="1px"
-                    color="primary"
-                    gutterBottom
-                  />
                   <List>
                     <ListItem>
                       <Link>License</Link>
@@ -251,17 +254,10 @@ function App() {
                     fontSize="400"
                     fontWeight="semi-bold"
                     uppercase
-                    mb="xs"
+                    mb="md"
                   >
                     Contact
                   </Typography>
-                  <Divider
-                    position="start"
-                    width="60px"
-                    thickness="1px"
-                    color="primary"
-                    gutterBottom
-                  />
                   <List>
                     <ListItem>
                       <Typography fontSize="300">(+1) 943-888-609</Typography>

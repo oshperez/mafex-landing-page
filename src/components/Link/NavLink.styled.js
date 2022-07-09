@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
+import Link from "./Link.styled";
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   position: relative;
   padding-inline: 0.25rem;
-  cursor: pointer;
 
   ${({ active }) =>
     active &&

@@ -7,37 +7,37 @@ import modifiedCarImg from "assets/images/modified-car.jpg";
 
 const serviceCardData = [
   {
-    serviceName: "Lorem Ipsum",
+    service: "Lorem Ipsum",
     description:
       "Ut id tempor cillum deserunt ullamco qui labore amet officia culpa amet sit.",
     image: polishingImg,
   },
   {
-    serviceName: "Lorem Ipsum",
+    service: "Lorem Ipsum",
     description:
       "Ut id tempor cillum deserunt ullamco qui labore amet officia culpa amet sit.",
     image: panelPatchImg,
   },
   {
-    serviceName: "Lorem Ipsum",
+    service: "Lorem Ipsum",
     description:
       "Ut id tempor cillum deserunt ullamco qui labore amet officia culpa amet sit.",
     image: dentRepairImg,
   },
   {
-    serviceName: "Lorem Ipsum",
+    service: "Lorem Ipsum",
     description:
       "Ut id tempor cillum deserunt ullamco qui labore amet officia culpa amet sit.",
     image: paintGunImg,
   },
   {
-    serviceName: "Lorem Ipsum",
+    service: "Lorem Ipsum",
     description:
       "Ut id tempor cillum deserunt ullamco qui labore amet officia culpa amet sit.",
     image: weldingImg,
   },
   {
-    serviceName: "Lorem Ipsum",
+    service: "Lorem Ipsum",
     description:
       "Ut id tempor cillum deserunt ullamco qui labore amet officia culpa amet sit.",
     image: modifiedCarImg,

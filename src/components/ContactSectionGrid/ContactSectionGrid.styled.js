@@ -14,7 +14,7 @@ const ContactSectionGrid = styled.div`
     grid-row-end: 2;
     background-image: url(${carImg});
     background-size: cover;
-    background-position: 50% 65%;
+    background-position: 50% 70%;
     z-index: 1;
   }
   & > div:last-child {

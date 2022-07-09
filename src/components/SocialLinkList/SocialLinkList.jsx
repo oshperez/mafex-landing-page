@@ -1,4 +1,4 @@
-import Link from "../Link.styled";
+import Link from "../Link/Link.styled";
 import List from "../List/List.styled";
 import ListItem from "../ListItem/ListItem.styled";
 

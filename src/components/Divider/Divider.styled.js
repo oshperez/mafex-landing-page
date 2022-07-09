@@ -57,4 +57,5 @@ const Divider = styled.div.attrs((props) => ({
       margin-right: 0;
     `}
 `;
+
 export default Divider;

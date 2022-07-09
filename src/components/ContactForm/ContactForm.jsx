@@ -1,6 +1,6 @@
-import StyledContactForm from "components/ContactForm.styled";
-import Button from "./Button/Button";
-import InputField from "components/InputField";
+import StyledContactForm from "./ContactForm.styled";
+import Button from "components/Button/Button";
+import InputField from "components/InputField/InputField";
 
 import phoneIcon from "assets/icons/phone.svg";
 import envelopeIcon from "assets/icons/envelope.svg";
