@@ -78,7 +78,7 @@ function App() {
             <Typography as="h1">
               Bringing cars <Highlight>back to life.</Highlight>
             </Typography>
-            <Typography as="h2" css="width: 60%">
+            <Typography as="h2" mb="lg" css="width: 60%">
               Labore ad minim labore eiusmod id tempor nostrud est. Consectetur
               ad ad consequat aliqua quis.
             </Typography>
@@ -181,16 +181,8 @@ function App() {
               <div />
               <div>
                 <ContactCard>
-                  <Typography as="h1">Let's talk.</Typography>
-                  <Divider
-                    position="start"
-                    width="80px"
-                    thickness="4px"
-                    color="text-primary"
-                    round
-                  />
-                  <Typography as="h2" mt="md">
-                    Share your excitment with us.
+                  <Typography as="h1" mb="md">
+                    Let's talk.
                   </Typography>
                   <ContactForm />
                 </ContactCard>

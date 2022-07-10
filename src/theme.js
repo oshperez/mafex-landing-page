@@ -6,7 +6,8 @@ const theme = {
       dark: "#c50033",
     },
     common: {
-      lightPink: "#f8e4e4",
+      grey: "#f9f8fc",
+      pink: "#f8e4e4",
     },
     text: {
       primary: "#420308",
@@ -49,8 +50,8 @@ const theme = {
   },
   sizes: {
     spacing: ["xs", "sm", "md", "lg", "xl", "xxl"],
-    font: ["200", "300", "400", "500", "600", "700", "800", "900"]
-  }
+    font: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  },
 };
 
 export default theme;

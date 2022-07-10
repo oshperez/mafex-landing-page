@@ -49,7 +49,7 @@ const StyledButton = styled.a`
     css`
       border: thin solid ${theme.palette.primary.main};
       &:hover {
-        background-color: ${theme.palette.common.lightPink};
+        background-color: ${theme.palette.common.pink};
       }
     `}
 
@@ -64,6 +64,7 @@ const StyledButton = styled.a`
     css`
       width: 100%;
     `}
+
   ${({ uppercase }) =>
     uppercase &&
     css`

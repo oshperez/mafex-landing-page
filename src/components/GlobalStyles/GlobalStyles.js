@@ -32,7 +32,7 @@ const GlobalStyles = createGlobalStyle`
   h2 {
     font-size: ${({ theme }) => theme.typography.fontSize600};
     font-weight: ${({ theme }) => theme.typography.fontWeightRegular};
-    margin-bottom: ${({ theme }) => theme.spacing.lg};
+    margin-bottom: ${({ theme }) => theme.spacing.md};
 
   }
 
