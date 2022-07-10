@@ -4,12 +4,12 @@ import carImage from "assets/images/car.png";
 
 const HeroSection = styled(Section)`
   width: 100%;
-  min-height: 700px;
+  min-height: 750px;
   background-image: url(${carImage});
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: left top 110%;
-  padding-top: 5rem;
+  background-position: left top 100%;
+  padding-top: 11em;
 `;
 
 export default HeroSection;
