@@ -3,7 +3,7 @@ import {
   checkIsPredeterminedSpaceSize,
   checkIsPredeterminedFontSize,
   checkIsPredeterminedFontWeight,
-  kebabCaseToCamelCase
+  kebabCaseToCamelCase,
 } from "./helpers";
 
 export const spaceMixin = css`
@@ -173,5 +173,19 @@ export const fontMixin = css`
     props.textAlign &&
     css`
       text-align: ${props.textAlign};
+    `}
+`;
+
+export const mediaQueryMixin = css`
+  ${({ theme, mq }) =>
+    mq &&
+    css`
+      ${Object.keys(mq).map((label) => {
+        return Object.keys(mq[label]).map((value) => {
+          return theme.breakpoints[label][value]`
+              ${mq[label][value]}
+            `;
+        });
+      })}
     `}
 `;

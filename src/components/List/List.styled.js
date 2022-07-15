@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { mediaQueryMixin, spaceMixin } from "utils/mixins";
 import ListItem from "components/ListItem/ListItem.styled";
 
 const List = styled.ul.attrs((props) => ({
@@ -21,5 +22,8 @@ const List = styled.ul.attrs((props) => ({
         margin-right: ${dense ? theme.spacing.lg : theme.spacing.xl};
       }
     `}
+
+    ${mediaQueryMixin}
+    ${spaceMixin}
 `;
 export default List;

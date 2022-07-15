@@ -1,4 +1,22 @@
+import { mediaQueryFactory } from "./utils/helpers";
+
+const breakpoints = {
+  xs: "320px",
+  sm: "480px",
+  md: "768px",
+  lg: "1024px",
+  xl: "1200px",
+};
+
+const mediaQueries = mediaQueryFactory(breakpoints);
+
 const theme = {
+  breakpoints: {
+    values: {
+      ...breakpoints,
+    },
+    ...mediaQueries,
+  },
   palette: {
     primary: {
       main: "#ff4d5c",
@@ -22,6 +40,7 @@ const theme = {
     dropShadow: [
       "0px 3px 3px rgba(0, 0, 0, 0.25)",
       "4px 4px 20px rgba(0, 0, 0, 0.1)",
+      "rgba(149, 157, 165, 0.2) 0px 8px 24px",
     ],
   },
   typography: {
@@ -47,10 +66,6 @@ const theme = {
     lg: "2em",
     xl: "4em",
     xxl: "8em",
-  },
-  sizes: {
-    spacing: ["xs", "sm", "md", "lg", "xl", "xxl"],
-    font: ["200", "300", "400", "500", "600", "700", "800", "900"],
   },
 };
 

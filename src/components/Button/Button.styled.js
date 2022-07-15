@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components";
-import { fontMixin, spaceMixin } from "utils/mixins";
+import { fontMixin, spaceMixin, mediaQueryMixin } from "utils/mixins";
 
 const StyledButton = styled.a`
+  display: inline-block;
   font-size: ${({ theme }) => theme.typography.fontSize400};
   font-weight: ${({ theme }) => theme.typography.fontWeightSemiBold};
   padding: 1em 1.75em;
@@ -10,6 +11,8 @@ const StyledButton = styled.a`
 
   ${spaceMixin}
   ${fontMixin}
+  ${mediaQueryMixin}
+  
   
   ${({ size }) =>
     size === "large" &&
@@ -70,6 +73,13 @@ const StyledButton = styled.a`
     css`
       text-transform: uppercase;
     `}
+
+    ${({ dropShadow, theme }) =>
+    dropShadow &&
+    css`
+      filter: drop-shadow(${theme.shadow.dropShadow[0]});
+    `}
 `;
 
+console.log({ mediaQueryMixin });
 export default StyledButton;

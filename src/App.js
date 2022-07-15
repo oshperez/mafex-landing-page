@@ -36,8 +36,13 @@ import ImageWithShape from "components/ImageWithShape/ImageWithShape";
 import { ReactComponent as PhoneIcon } from "assets/icons/phone.svg";
 import { ReactComponent as ArrowIcon } from "assets/icons/arrow.svg";
 import carRearEndImage from "assets/images/car-rear-end.jpg";
+import BarIcon from "components/BarIcon/BarIcon";
+import NavMenu from "components/NavMenu/NavMenu";
+import { useState } from "react";
 
 function App() {
+  const [navOpen, setNavOpen] = useState(false);
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -46,7 +51,11 @@ function App() {
           <Container>
             <Navigation>
               <Logo>Logo</Logo>
-              <List direction="row" dense>
+              <List
+                direction="row"
+                dense
+                mq={{ down: { lg: `display: none;` } }}
+              >
                 <ListItem>
                   <NavLink href="#" active>
                     Home
@@ -62,13 +71,22 @@ function App() {
                   <NavLink href="#">Contact</NavLink>
                 </ListItem>
               </List>
-              <FlexContainer dropShadow>
-                <Button startIcon={<PhoneIcon width={15} />} fontSize="300">
-                  (+1) 943-888-609
-                </Button>
-                <Button variant="outlined" size="small" pill>
-                  Get in touch
-                </Button>
+              <FlexContainer alignItems="center">
+                <FlexContainer dropShadow>
+                  <Button startIcon={<PhoneIcon width={15} />} fontSize="300">
+                    (+1) 943-888-609
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    size="small"
+                    pill
+                    mq={{ down: { md: `display: none;` } }}
+                  >
+                    Get in touch
+                  </Button>
+                </FlexContainer>
+                <BarIcon open={navOpen} setOpen={setNavOpen} />
+                <NavMenu navOpen={navOpen} />
               </FlexContainer>
             </Navigation>
           </Container>
