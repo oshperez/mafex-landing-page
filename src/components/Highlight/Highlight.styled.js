@@ -12,6 +12,12 @@ const Highlight = styled.span`
     right: 0;
     bottom: -50%;
   }
+
+  @media (max-width: 800px) {
+    &::before {
+      display: none;
+    }
+  }
 `;
 
 export default Highlight;

@@ -8,8 +8,15 @@ const HeroSection = styled(Section)`
   background-image: url(${carImage});
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: left top 100%;
+  background-position: top 100% left;
   padding-top: 11em;
+
+  ${({ theme }) => theme.breakpoints.down.md`
+    min-height: 800px;
+    background-position: left 28% bottom;
+    padding-top: 10em;
+
+  `}
 `;
 
 export default HeroSection;

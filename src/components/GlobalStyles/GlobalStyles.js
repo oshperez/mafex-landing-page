@@ -39,6 +39,17 @@ const GlobalStyles = createGlobalStyle`
   input, textarea {
     font-size: ${({ theme }) => theme.typography.fontSize400};
   }
+
+  ${({ theme }) => theme.breakpoints.down.sm`
+    h1 {
+      font-size: ${theme.typography.fontSize700}
+    }
+
+    h2 {
+      font-size: ${theme.typography.fontSize500}
+    }
+  
+  `}
 `;
 
 export default GlobalStyles;

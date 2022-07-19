@@ -1,3 +1,4 @@
+import { useState } from "react";
 import GlobalStyles from "components/GlobalStyles/GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import theme from "./theme";
@@ -32,13 +33,12 @@ import Typography from "components/Typography/Typography.styled";
 import List from "components/List/List.styled";
 import ListItem from "components/ListItem/ListItem.styled";
 import ImageWithShape from "components/ImageWithShape/ImageWithShape";
+import BarIcon from "components/BarIcon/BarIcon";
+import NavMenu from "components/NavMenu/NavMenu";
 
 import { ReactComponent as PhoneIcon } from "assets/icons/phone.svg";
 import { ReactComponent as ArrowIcon } from "assets/icons/arrow.svg";
 import carRearEndImage from "assets/images/car-rear-end.jpg";
-import BarIcon from "components/BarIcon/BarIcon";
-import NavMenu from "components/NavMenu/NavMenu";
-import { useState } from "react";
 
 function App() {
   const [navOpen, setNavOpen] = useState(false);
@@ -96,7 +96,7 @@ function App() {
             <Typography as="h1">
               Bringing cars <Highlight>back to life.</Highlight>
             </Typography>
-            <Typography as="h2" mb="lg" css="width: 60%">
+            <Typography as="h2" mb="lg" mq={{ up: { lg: `width: 60%` } }}>
               Labore ad minim labore eiusmod id tempor nostrud est. Consectetur
               ad ad consequat aliqua quis.
             </Typography>
