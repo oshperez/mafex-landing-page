@@ -21,7 +21,7 @@ import ServiceSectionGrid from "components/ServiceSectionGrid/ServiceSectionGrid
 import serviceCardData from "components/ServiceCard/ServiceCard.data";
 import AboutSectionGrid from "components/AboutSectionGrid/AboutSectionGrid.styled";
 import ContactSectionGrid from "components/ContactSectionGrid/ContactSectionGrid.styled";
-import ContactCard from "components/ContactCard/ContactCard.syled";
+import ContactCard from "components/ContactCard/ContactCard.styled";
 import ContactForm from "components/ContactForm/ContactForm";
 import Footer from "components/Footer/Footer.styled";
 import FooterGrid from "components/Footer/FooterGrid.styled";
@@ -142,7 +142,6 @@ function App() {
               <Box
                 css={`
                   grid-area: heading;
-                  align-self: end;
                 `}
               >
                 <Typography
@@ -196,15 +195,15 @@ function App() {
         <Section>
           <Container>
             <ContactSectionGrid>
-              <div />
-              <div>
+              <Box />
+              <Box>
                 <ContactCard>
-                  <Typography as="h1" mb="md">
+                  <Typography as="h1" mb="md" css="white-space: nowrap">
                     Let's talk.
                   </Typography>
                   <ContactForm />
                 </ContactCard>
-              </div>
+              </Box>
             </ContactSectionGrid>
           </Container>
         </Section>
