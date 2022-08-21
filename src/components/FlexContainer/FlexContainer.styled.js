@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components";
-import { spaceMixin } from "utils/mixins";
+import { mediaQueryMixin, spaceMixin } from "utils/mixins";
 
 const FlexContainer = styled.div`
   display: flex;
   ${spaceMixin}
+  ${mediaQueryMixin}
 
   ${({ flexDirection }) =>
     flexDirection &&

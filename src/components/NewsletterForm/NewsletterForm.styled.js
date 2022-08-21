@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const StyledNewsletterForm = styled.form`
   position: relative;
+  width: min(500px, 100%);
 
   & input:focus-visible {
     outline: 1.5px solid ${({ theme }) => theme.palette.primary.main};
@@ -22,6 +23,11 @@ const StyledNewsletterForm = styled.form`
     border-bottom-right-radius: 500px;
     border-top-right-radius: 500px;
   }
+
+  ${({theme}) => theme.breakpoints.down.sm`
+    margin-inline: auto;
+    width: min(350px, 100%);
+  `}
 `;
 
 export default StyledNewsletterForm;

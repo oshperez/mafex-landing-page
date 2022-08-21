@@ -81,5 +81,4 @@ const StyledButton = styled.a`
     `}
 `;
 
-console.log({ mediaQueryMixin });
 export default StyledButton;

@@ -35,10 +35,13 @@ import ListItem from "components/ListItem/ListItem.styled";
 import ImageWithShape from "components/ImageWithShape/ImageWithShape";
 import BarIcon from "components/BarIcon/BarIcon";
 import NavMenu from "components/NavMenu/NavMenu";
+import FooterBottom from "components/Footer/FooterBottom.styled";
+import FooterNav from "components/Footer/FooterNav.styled";
 
 import { ReactComponent as PhoneIcon } from "assets/icons/phone.svg";
 import { ReactComponent as ArrowIcon } from "assets/icons/arrow.svg";
 import carRearEndImage from "assets/images/car-rear-end.jpg";
+import NavSection from "components/Footer/NavSection.styled";
 
 function App() {
   const [navOpen, setNavOpen] = useState(false);
@@ -210,13 +213,9 @@ function App() {
         <Footer>
           <Container>
             <FooterGrid>
-              <Logo>Logo</Logo>
-              <FlexContainer
-                css="grid-area: nav"
-                py="lg"
-                justifyContent="space-between"
-              >
-                <div>
+              <Logo mq={{ down: { sm: `text-align: center;` } }}>Logo</Logo>
+              <FooterNav py="lg">
+                <NavSection>
                   <Typography
                     as="h3"
                     fontSize="400"
@@ -237,8 +236,8 @@ function App() {
                       <Link>Contact</Link>
                     </ListItem>
                   </List>
-                </div>
-                <div>
+                </NavSection>
+                <NavSection>
                   <Typography
                     as="h3"
                     fontSize="400"
@@ -256,8 +255,8 @@ function App() {
                       <Link>Privacy Policy</Link>
                     </ListItem>
                   </List>
-                </div>
-                <div>
+                </NavSection>
+                <NavSection>
                   <Typography
                     as="h3"
                     fontSize="400"
@@ -272,12 +271,18 @@ function App() {
                       <Typography fontSize="300">(+1) 943-888-609</Typography>
                     </ListItem>
                     <ListItem>
-                      <Typography>company@gmail</Typography>
+                      <Typography>company@gmail.com</Typography>
                     </ListItem>
                   </List>
-                </div>
-              </FlexContainer>
-              <Box css="grid-area: newsletter" my="lg">
+                </NavSection>
+              </FooterNav>
+              <Box
+                my="lg"
+                css="grid-area: newsletter;"
+                mq={{
+                  down: { sm: `text-align: center;` },
+                }}
+              >
                 <Typography
                   as="h2"
                   mb="md"
@@ -290,27 +295,24 @@ function App() {
                 <NewsletterForm />
               </Box>
               <Divider
-                css="grid-area: divider"
                 fullWidth
                 thickness="0.5px"
                 gutterBottom
+                css="grid-area: divider"
               />
-              <FlexContainer
-                css="grid-area: footer-bottom"
-                justifyContent="space-between"
-                mt="md"
-                mb="lg"
-              >
+              <FooterBottom mt="md" mb="lg">
                 <Typography fontSize="300">
                   &copy;2022 Company. All rights reserved
                 </Typography>
                 <FlexContainer dropShadow>
-                  <Box mr="lg">
-                    <Typography>Find us on</Typography>
+                  <Box mr="lg" mq={{ down: { md: "display: none;" } }}>
+                    <Typography css="white-space: nowrap;">
+                      Find us on
+                    </Typography>
                   </Box>
                   <SocialLinkList />
                 </FlexContainer>
-              </FlexContainer>
+              </FooterBottom>
             </FooterGrid>
           </Container>
         </Footer>
