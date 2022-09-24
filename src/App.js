@@ -32,16 +32,18 @@ import Box from "components/Box/Box.styled";
 import Typography from "components/Typography/Typography.styled";
 import List from "components/List/List.styled";
 import ListItem from "components/ListItem/ListItem.styled";
-import ImageWithShape from "components/ImageWithShape/ImageWithShape";
+import ImageWithBackgroundShape from "components/ImageWithBackgroundShape/ImageWithBackgroundShape";
 import BarIcon from "components/BarIcon/BarIcon";
 import NavMenu from "components/NavMenu/NavMenu";
 import FooterBottom from "components/Footer/FooterBottom.styled";
 import FooterNav from "components/Footer/FooterNav.styled";
+import NavSection from "components/Footer/NavSection.styled";
+import Image from "components/Image/Image.styled";
 
 import { ReactComponent as PhoneIcon } from "assets/icons/phone.svg";
 import { ReactComponent as ArrowIcon } from "assets/icons/arrow.svg";
 import carRearEndImage from "assets/images/car-rear-end.jpg";
-import NavSection from "components/Footer/NavSection.styled";
+import AboutSectionHeading from "components/AboutSectionHeading/AboutSectionHeading.styled";
 
 function App() {
   const [navOpen, setNavOpen] = useState(false);
@@ -99,7 +101,7 @@ function App() {
             <Typography as="h1">
               Bringing cars <Highlight>back to life.</Highlight>
             </Typography>
-            <Typography as="h2" mb="lg" mq={{ up: { lg: `width: 60%` } }}>
+            <Typography as="h2" fontWeight="semi-bold" mb="lg" mq={{ up: { lg: `width: 60%` } }}>
               Labore ad minim labore eiusmod id tempor nostrud est. Consectetur
               ad ad consequat aliqua quis.
             </Typography>
@@ -118,8 +120,14 @@ function App() {
             <Typography as="h1" textAlign="center" uppercase>
               What we do.
             </Typography>
-            <Divider width="80px" thickness="4px" color="text-primary" round />
-            <Typography as="h2" textAlign="center" mb="md" mt="md">
+            <Divider variant="main" color="text-primary" round />
+            <Typography
+              as="h2"
+              fontWeight="semi-bold"
+              textAlign="center"
+              mb="md"
+              mt="md"
+            >
               Adipisicing deserunt culpa proident labore nostrud adipisicing
               dolor officia fugiat.
             </Typography>
@@ -140,37 +148,42 @@ function App() {
           </Container>
         </Section>
         <Section>
-          <Container disableRightGutter>
+          <Container>
             <AboutSectionGrid>
-              <Box
-                css={`
-                  grid-area: heading;
-                `}
+              <FlexContainer
+                flexDirection="column"
+                justifyContent="start"
+                css="grid-area: heading;"
               >
-                <Typography
-                  as="h1"
-                  uppercase
-                  oneWordPerLine
-                  lineHeight="2.125em"
-                >
+                <AboutSectionHeading as="h1" uppercase>
                   Who we are.
-                </Typography>
+                </AboutSectionHeading>
                 <Divider
+                  variant="main"
                   position="start"
-                  width="80px"
-                  thickness="4px"
                   color="text-primary"
                   round
+                  mq={{ down: { md: `margin-inline: auto;` } }}
                 />
-              </Box>
+              </FlexContainer>
               <Box
                 css={`
                   grid-area: text;
                   align-self: end;
-                  padding-right: ${({ theme }) => theme.spacing.xl};
                 `}
+                mq={{
+                  up: { lg: `padding-right: 4em` },
+                  down: { md: `text-align: center;` },
+                }}
               >
-                <Typography as="h2">Aliquip elit tempor sint ad ad.</Typography>
+                <Typography
+                  as="h2"
+                  fontWeight="semi-bold"
+                  mt="lg"
+                  mq={{ down: { md: `margin-top: 1em` } }}
+                >
+                  Aliquip elit tempor sint ad ad.
+                </Typography>
                 <Typography>
                   Elit commodo dolore minim ipsum cupidatat officia culpa eu do
                   aliquip. Dolore nostrud culpa tempor nisi proident esse qui
@@ -183,14 +196,17 @@ function App() {
                   excepteur.
                 </Typography>
               </Box>
-              <ImageWithShape />
-              <img
+              <FlexContainer css="grid-area: small-image;">
+                <ImageWithBackgroundShape />
+              </FlexContainer>
+              <Image
                 src={carRearEndImage}
-                alt="Rear-end of classic car"
+                alt="Rear end of classic car"
                 css={`
-                  grid-area: img2;
-                  max-width: 100%;
+                  grid-area: large-image;
+                  width: 100%;
                 `}
+                mq={{ down: { xl: `display: none;` } }}
               />
             </AboutSectionGrid>
           </Container>

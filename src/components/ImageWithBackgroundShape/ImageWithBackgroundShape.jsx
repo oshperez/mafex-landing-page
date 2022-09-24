@@ -1,11 +1,11 @@
 import technicianImage from "assets/images/technician.png";
-import StyledImageWithShape from "./ImageWithShape.styled";
+import StyledImageWithBackgroundShape from "./ImageWithBackgroundShape.styled";
 import ImageWrapper from "./ImageWrapper.styled";
 
-const ImageWithShape = (props) => {
+const ImageWithBackgroundShape = (props) => {
   return (
     <ImageWrapper>
-      <StyledImageWithShape
+      <StyledImageWithBackgroundShape
         src={technicianImage}
         alt="Tecnician repairing car"
       />
@@ -13,4 +13,4 @@ const ImageWithShape = (props) => {
   );
 };
 
-export default ImageWithShape;
+export default ImageWithBackgroundShape;

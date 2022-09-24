@@ -31,7 +31,7 @@ export function mediaQueryFactory(breakpoints) {
     return region === "down"
       ? `@media (max-width: ${breakpoints[boundary]})`
       : region === "up"
-      ? `@media (min-width: ${breakpoints[boundary]})`
+      ? `@media (min-width: calc(${breakpoints[boundary]} + 1px))`
       : "";
   };
 

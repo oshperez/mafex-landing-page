@@ -154,13 +154,6 @@ export const fontMixin = css`
       text-transform: uppercase;
     `}
 
-  /* Arrange text so that there is only one word per line */
-  ${(props) =>
-    props.oneWordPerLine &&
-    css`
-      word-spacing: 999rem;
-    `}
-
   /* Apply line height */
   ${(props) =>
     props.lineHeight &&

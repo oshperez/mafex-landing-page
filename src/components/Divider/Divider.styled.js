@@ -1,13 +1,29 @@
 import styled, { css } from "styled-components";
+import { mediaQueryMixin, spaceMixin } from "utils/mixins";
 
 const Divider = styled.div.attrs((props) => ({
   color: props.color || props.theme.palette.text.disabled,
   thickness: props.thickness || "1.5px",
 }))`
+  ${mediaQueryMixin}
+  ${spaceMixin}
+
   width: 90%;
   height: ${({ thickness }) => thickness};
   margin-inline: auto;
   background-color: ${({ color }) => color};
+
+  ${({ theme, variant }) =>
+    variant === "main" &&
+    css`
+      width: 80px;
+      height: 4px;
+
+      ${theme.breakpoints.down.sm`
+      width: 60px;
+      height: 3px;
+    `}
+    `}
 
   ${(props) =>
     props.fullWidth &&

@@ -29,6 +29,12 @@ const FlexContainer = styled.div`
     css`
       align-items: ${alignItems};
     `}
+    
+  ${({ alignContent }) =>
+    alignContent &&
+    css`
+      align-items: ${alignContent};
+    `}
   
   ${({ dropShadow, theme }) =>
     dropShadow &&
